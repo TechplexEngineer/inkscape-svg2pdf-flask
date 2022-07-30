@@ -12,14 +12,12 @@ Run with `docker run -p 8080:8080 gcr.io/as-a-service-dev/inkscape`
 
 * Build with `docker build . -t inkscape`
 * Start with `docker run -p 8080:8080 inkscape`
-* Open in your browser at `http://localhost:8080"/?url=https://upload.wikimedia.org/wikipedia/commons/f/fd/Ghostscript_Tiger.svg`
+* Open in your browser at `http://localhost:8080/?url=https://upload.wikimedia.org/wikipedia/commons/f/fd/Ghostscript_Tiger.svg`
 
-## Deploy to your server
+## Convert svg to pdf via curl
 
-The following container image always reflects the latest version of the `master` branch of this repo: `gcr.io/as-a-service-dev/inkscape`
+### Local File
+`curl -o test.pdf --form file=@sample.svg http://localhost:8080/`
 
-## Deploy to Google Cloud
-
-[![Run on Google Cloud](https://storage.googleapis.com/cloudrun/button.svg)](https://deploy.cloud.run)
-
-Or use `gcloud beta run deploy --image gcr.io/as-a-service-dev/inkscape`
+### Remote File
+`curl -o test.pdf http://localhost:8080/?url=https://upload.wikimedia.org/wikipedia/commons/f/fd/Ghostscript_Tiger.svg`
