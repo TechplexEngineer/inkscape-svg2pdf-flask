@@ -1,6 +1,6 @@
 # Inkscape as a service
 
-A simple web service that transforms the given SVG file into the desired format. 
+A simple web service that transforms the given SVG file PDF. 
 
 Run with `docker run -p 8080:8080 gcr.io/as-a-service-dev/inkscape`
 
