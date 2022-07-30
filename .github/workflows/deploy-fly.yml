@@ -8,6 +8,10 @@ env:
   # use `flyctl auth token` to generate FLY_API_TOKEN
   FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
 
+# with multiple sequential pushes, run workflow on last one if the previous have not finished.
+concurrency: 
+  group: prod
+  cancel-in-progress: true
 
 jobs:
   deploy:

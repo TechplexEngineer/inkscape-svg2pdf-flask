@@ -15,6 +15,11 @@ on:
   pull_request:
     branches: [ "main" ]
 
+# with multiple sequential pushes, run workflow on last one if the previous have not finished.
+concurrency: 
+  group: docker
+  cancel-in-progress: true
+
 env:
   # Use docker.io for Docker Hub if empty
   REGISTRY: ghcr.io
